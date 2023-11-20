@@ -65,6 +65,16 @@
   font-size: 38px;
 }
 
+@media (max-width: 980px) {
+  .footer-info {
+    padding: 50px 1% 50px 1%;
+  }
+
+  .footer-end {
+    padding: 20px 2% 20px 2%;
+  }
+}
+
 @media (max-width: 680px) {
   .footer-info {
     flex-direction: column;

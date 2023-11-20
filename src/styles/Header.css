@@ -23,7 +23,7 @@
 }
 
 .header-menu {
-  font-size: 30px;
+  font-size: 40px;
   display: none;
 }
 
@@ -176,7 +176,7 @@
 
 @media (max-width: 800px) {
   .header-container {
-    padding: 12px 0 12px 0;
+    padding: 20px 0 20px 0;
   }
 
   .header-logo {
@@ -189,7 +189,7 @@
   }
 
   .header-logo img {
-    width: 150px;
+    width: 140px;
   }
 
   .header-user {
@@ -202,6 +202,10 @@
 
   .user-in-text {
     display: none;
+  }
+
+  .cart-icon svg {
+    font-size: 38px;
   }
 
   .header-secondary {

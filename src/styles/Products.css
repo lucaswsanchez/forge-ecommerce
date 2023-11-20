@@ -1,5 +1,6 @@
 .products-container {
   width: 85%;
+  max-width: 1400px;
   height: 100%;
   margin: auto;
   background-color: #fbfbfb;
@@ -20,7 +21,7 @@
 
 .products {
   width: 100%;
-  padding: 20px 0 20px 0;
+  padding: 20px 0 30px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,8 +50,6 @@
   transform: scale(1);
 }
 
-
-
 .product img {
   width: 300px;
   height: 300px;
@@ -71,4 +70,14 @@
   color: #fcd476;
   transform: scale(1.5);
   cursor: pointer;
+}
+
+@media (max-width: 805px) {
+  .products {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 425px) {
+
 }
