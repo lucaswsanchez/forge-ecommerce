@@ -1,0 +1,81 @@
+.pd-container {
+  width: 85%;
+  height: 100%;
+  margin: auto;
+  padding: 50px 0 50px 0;
+  display: flex;
+  gap: 20px;
+}
+
+.pd-img {
+  width: 55%;
+}
+
+.slider-container img {
+    width: 100%
+}
+
+.pd-text {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.pd-text p {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.pd-text span:first-of-type {
+  font-size: 22px;
+  font-weight: 600;
+  color: #48515b;
+}
+
+.pd-features span:first-of-type {
+  font-size: 17px;
+}
+
+.pd-features ul li {
+  color: #48515b;
+  font-size: 14px;
+  margin-left: 22px;
+  line-height: 2;
+}
+
+.pd-quantity-btn {
+  width: 50%;
+  display: flex;
+  gap: 10px;
+}
+
+.pd-quantity-btn input {
+  width: 15%;
+  height: 36px;
+  font-size: 16px;
+  outline: none;
+  padding-left: 6px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.pd-quantity-btn button {
+  flex: 1;
+  background-color: #27323f;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  border-radius: 3px;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.pd-category {
+  font-size: 14px;
+  color: #48515b;
+  border-top: 1px solid #aaa;
+  padding-top: 10px;
+}

@@ -1,0 +1,122 @@
+{
+  "users": {
+    "K1D9aNIdXhV79yYcRSNU6bwINth1": {
+      "email": "usuario1@email.com",
+      "cart": {
+        "1": {
+          "id": 1,
+          "name": "Teléfono celular de 128gb desbloqueado de fábrica con tecnología 5G, cámara profesional con zoom espacial de 30X, modo nocturno, color gris espacial",
+          "price": 450000,
+          "quantity": 2,
+          "image": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Tecnologia%2Fsmartphone1.png?alt=media&token=4394170c-cd4b-41d0-918d-475278b1f5d8",
+          "code": 999001
+        }
+      }
+    },
+    "6H9WUVAfXtVXN3DHBeNj8uRG7Lz2": {
+      "email": "usuario2@email.com",
+      "cart": {
+        "1": {
+          "id": 1,
+          "name": "Teléfono celular de 128gb desbloqueado de fábrica con tecnología 5G, cámara profesional con zoom espacial de 30X, modo nocturno, color gris espacial",
+          "price": 450000,
+          "quantity": 2,
+          "image": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Tecnologia%2Fsmartphone1.png?alt=media&token=4394170c-cd4b-41d0-918d-475278b1f5d8",
+          "code": 999001
+        }
+      }
+    }
+  },
+  "products": {
+    "1": {
+      "id": 1,
+      "name": "Teléfono celular de 128gb desbloqueado de fábrica con tecnología 5G, cámara profesional con zoom espacial de 30X, modo nocturno, color gris espacial",
+      "price": 450000,
+      "category": "tecnologia",
+      "image": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Tecnologia%2Fsmartphone1.png?alt=media&token=4394170c-cd4b-41d0-918d-475278b1f5d8",
+      "image2": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Tecnologia%2Fsmartphone2.jpg?alt=media&token=9737ec7e-769b-47d1-919a-0b95e1f45f22",
+      "image3": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Tecnologia%2Fsmartphone3.jpg?alt=media&token=72929cdf-2f67-48e9-a0e1-b73cd35dd266",
+      "code": 999001
+    },
+    "2": {
+      "id": 2,
+      "name": "Laptop FHD de 14 pulgadas (400 nits) con procesador Intel Core i7-10510U de 10ª generación de hasta 4.90 GHz, SSD PCIe de 1 TB, 16 GB de RAM y Windows 11 Pro",
+      "price": 890000,
+      "category": "tecnologia",
+      "image": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Tecnologia%2Flaptop1.png?alt=media&token=e77b3005-9c18-47f0-a239-5f8c26fc08e7",
+      "image2": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Tecnologia%2Flaptop2.jpg?alt=media&token=da25ef46-e4d6-4e42-b576-0d259c1aff50",
+      "image3": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Tecnologia%2Flaptop3.jpg?alt=media&token=33a094c2-c522-4fb7-aa69-7fe038dec0c5",
+      "code": 999002
+    },
+    "3": {
+      "id": 3,
+      "name": "Televisor smart Neo QLED de la serie QN90A de 75 pulgadas, clase 4K UHD Quantum HDR 32x",
+      "price": 1200000,
+      "category": "tecnologia",
+      "image": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Tecnologia%2Ftv1.png?alt=media&token=198c8e86-1226-4ee4-a413-b0a0d98081df",
+      "image2": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Tecnologia%2Ftv2.jpg?alt=media&token=6ad7f00d-3a6b-49cf-9371-3b8b43713895",
+      "image3": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Tecnologia%2Ftv3.jpg?alt=media&token=1a1943bd-efcd-4b3f-9eec-25e0c2445f16",
+      "code": 999003
+    },
+    "4": {
+      "id": 4,
+      "name": "Lavadora de pulsador compacta para ropa, tambor de 0.9 pies cúbicos, color negro, modelo BPAB10WH",
+      "price": 389000,
+      "category": "electrodomestico",
+      "image": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Electrodomesticos%2Flavarropas1.png?alt=media&token=7f2e1622-efbd-4da5-9779-3f16b5b02e26",
+      "image2": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Electrodomesticos%2Flavarropas1.2.jpg?alt=media&token=560d1bf0-6f90-4e5b-8e70-8972ad9b4cf2",
+      "image3": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Electrodomesticos%2Flavarropas1.3.jpg?alt=media&token=cce7b208-95b7-4146-8b2e-f75c6b536b2a",
+      "code": 999004
+    },
+    "5": {
+      "id": 5,
+      "name": "Lavadora compacta totalmente automática con ruedas, 1.6 pies cúbicos, capacidad de 11 kg y 6 programas de lavado.",
+      "price": 485000,
+      "category": "electrodomestico",
+      "image": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Electrodomesticos%2Flavarropas2.png?alt=media&token=ded0c97c-2138-4ebe-bab0-05d162a38a5c",
+      "image2": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Electrodomesticos%2Flavarropas1.2.jpg?alt=media&token=560d1bf0-6f90-4e5b-8e70-8972ad9b4cf2",
+      "image3": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Electrodomesticos%2Flavarropas1.3.jpg?alt=media&token=cce7b208-95b7-4146-8b2e-f75c6b536b2a",
+      "code": 999005
+    },
+    "6": {
+      "id": 6,
+      "name": "Aire acondicionado de 5000 BTU, enfriamiento eficiente para áreas más pequeñas como dormitorios y habitaciones de invitados",
+      "price": 620000,
+      "category": "electrodomestico",
+      "image": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Electrodomesticos%2Faire1.png?alt=media&token=c307e03c-5345-4311-a2aa-3e2ef29a1aa9",
+      "image2": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Electrodomesticos%2Faire2.jpg?alt=media&token=e3b06dcb-dc89-48a5-a655-7bfa0a096b7c",
+      "image3": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Electrodomesticos%2Faire3.jpg?alt=media&token=e93e8251-f938-4133-bf4d-d2e2ab35c7a7",
+      "code": 999006
+    },
+    "7": {
+      "id": 7,
+      "name": "Capacidad de 0.9 pies cúbicos, 900 watts, acero inoxidable",
+      "price": 280000,
+      "category": "cocina",
+      "image": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Cocina%2Fcocina2.png?alt=media&token=e00457fe-a56b-428d-b471-dcbbb5838f8f",
+      "image2": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Cocina%2Fcocina1.2.jpg?alt=media&token=6f2a1c97-123e-4bc4-9e58-dd8e9bedffa2",
+      "image3": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Cocina%2Fcocina1.3.jpg?alt=media&token=5bfba834-0771-4a73-a4d5-1e08dd05c114",
+      "code": 999007
+    },
+    "8": {
+      "id": 8,
+      "name": "Horno con sensor inteligente, interior de fácil limpieza, modo ECO, 1.2 pies cúbicos, acero inoxidable",
+      "price": 153000,
+      "category": "cocina",
+      "image": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Cocina%2Fcocina1.png?alt=media&token=1c9e645d-6e0e-49fa-baf2-0a7406545fd6",
+      "image2": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Cocina%2Fcocina1.2.jpg?alt=media&token=6f2a1c97-123e-4bc4-9e58-dd8e9bedffa2",
+      "image3": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Cocina%2Fcocina1.3.jpg?alt=media&token=5bfba834-0771-4a73-a4d5-1e08dd05c114",
+      "code": 999008
+    },
+    "9": {
+      "id": 9,
+      "name": "Heladera pequeña con congelador, ideal para dormitorio, oficina o dormitorio con estantes ajustables y compacta",
+      "price": 328000,
+      "category": "cocina",
+      "image": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Cocina%2Fheladera1.png?alt=media&token=0936c4ed-fa53-4fd3-bedf-496b86260064",
+      "image2": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Cocina%2Fheladera2.jpg?alt=media&token=01ac9e4e-626a-4d16-86bf-20c090f01c22",
+      "image3": "https://firebasestorage.googleapis.com/v0/b/forge-ecommerce.appspot.com/o/Cocina%2Fheladera3.jpg?alt=media&token=01a41604-485f-43d2-a529-1970b3956b73",
+      "code": 999009
+    }
+  }
+}

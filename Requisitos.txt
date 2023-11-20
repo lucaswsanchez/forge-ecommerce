@@ -1,0 +1,22 @@
+Debe incluir los siguientes puntos:
+
+> Un inicio // LISTO
+
+> Un login / register  //LISTO
+
+> Que al 'logearte' con el email 'tester@mail.com' y la password '12345' te envie a una navegación 
+
+> Un listado de productos, que al clickear el detalle, o el botón 'Comprar' te pida que estes logeado.
+
+> Estando logeado, la barra de navegación debe incluir un icono de perfil y que el mismo despliegue con
+un click o con un hover (hover suma más puntos) un menú diferente al clásico.  //LISTO
+
+> Al clickear un producto estando logeado debe enviarte al detalle. 
+
+> Al darle a comprar, debe mandarte al Checkout para confirmar los datos de la tarjeta. //LISTO
+
+> 'Simula un pago' incluyendo un loader y una alerta de pago confirmado. //LISTO FALTA LA ALETA CON REACT TOASTIFY
+
+> Reenvía al usuario a una pantalla donde se muestre lo que compró junto a un fake ID de compra. //LISTO
+
+> Que sea responsive desde Mobile hasta 4K.

@@ -1,0 +1,115 @@
+.checkout-container {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0 50px 0;
+  gap: 20px;
+}
+
+.checkout {
+  width: 75%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkout-card {
+  width: 100%;
+  display: flex;
+  background-color: #fbfbfb;
+  border: 1px solid #dfe6e8;
+  box-shadow: 0px 0px 8px 0.5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 40px 20px 40px 20px;
+}
+
+.checkout-data {
+  width: 50%;
+}
+
+.checkout-data form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+
+.checkout-label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkout-label label {
+  font-size: 12px;
+  padding-left: 6px;
+}
+
+.checkout-label input {
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 40px;
+  padding: 8px;
+  text-transform: uppercase;
+  transition: all 0.2s linear;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -o-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.checkout-label input:hover,
+.checkout-label input:focus {
+  border: 1px solid #999;
+}
+
+.checkout-label-code {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout-label-code div:first-of-type {
+  width: 48%;
+}
+
+.checkout-label-code div:last-of-type {
+  width: 48%;
+}
+
+.checkout-data a {
+  width: 100%;
+}
+
+.checkout-data button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  background-color: var(--color-primario);
+}
+
+.checkout-data button:hover {
+  background-color: var(--color-secundario);
+}
+
+.checkout-img {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.checkout-img img {
+  width: 250px;
+}
