@@ -2,6 +2,7 @@ import "../../styles/Auth.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
+import logo from "../../assets/images/logo-dark.png";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -42,12 +43,17 @@ function LogIn() {
     <div className="auth-container">
       <div className="auth-card">
         <div className="auth-img br-left">
-          <img src={loginimg} alt="img" />
+          <Link to="/">
+            <img src={loginimg} alt="img" />
+          </Link>
           <Link to="/signup" className="auth-link">
             <span>Crea tu cuenta</span>
           </Link>
         </div>
         <div className="auth-form br-right">
+          <Link to="/">
+            <img src={logo} alt="logo" />
+          </Link>
           <h2>Ingresa a tu cuenta</h2>
           <form onSubmit={handleSubmit}>
             <div className="auth-label">

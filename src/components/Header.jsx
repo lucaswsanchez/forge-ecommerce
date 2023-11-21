@@ -100,7 +100,7 @@ function Header() {
             {user ? (
               <>
                 <li className="user-in-responsive">
-                  <FaUserTie size={35} /> Hola, <strong>{user.email}</strong>
+                  <FaUserTie size={35} color="black" /> Hola, <strong>{user.email}</strong>
                 </li>
               </>
             ) : (
