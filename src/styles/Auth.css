@@ -146,6 +146,18 @@
     width: 60%;
   }
 
+  .auth-form button {
+    font-size: 14px;
+  }
+
+  .auth-label input {
+    font-size: 16px;
+  }
+
+  .auth-label svg {
+    font-size: 24px;
+  }
+
   .auth-img {
     display: none;
   }

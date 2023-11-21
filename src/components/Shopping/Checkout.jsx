@@ -16,6 +16,10 @@ function Checkout() {
     return () => clearTimeout(timeOut);
   }, []);
 
+  const handleScroll = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="checkout-container">
       {order ? (
@@ -57,7 +61,7 @@ function Checkout() {
                     <label htmlFor="dni">DNI del titular de la tarjeta</label>
                     <input type="text" id="dni" name="dni" required />
                   </div>
-                  <Link to="/order-confirmation">
+                  <Link to="/order-confirmation" onClick={handleScroll}>
                     <button type="submit">Realizar pago</button>
                   </Link>
                 </form>

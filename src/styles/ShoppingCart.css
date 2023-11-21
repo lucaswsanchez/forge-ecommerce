@@ -1,5 +1,6 @@
 .cart-container {
   width: 85%;
+  max-width: 1400px;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -96,6 +97,10 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #dfe6e8;
+}
+
+.cart-product-responsive {
+  display: none;
 }
 
 .item {
@@ -217,4 +222,115 @@
 
 .cart-summary-checkout button:hover {
   background-color: var(--color-secundario);
+}
+
+@media (max-width: 1024px) {
+  .cart {
+    width: 70%;
+  }
+}
+
+@media (max-width: 980px) {
+  .cart-container {
+    width: 100%;
+    padding: 0 10px 0px 10px;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .cart {
+    width: 100%;
+  }
+
+  .remove {
+    left: 90%;
+  }
+
+  .cart-summary-container {
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+
+  .cart-summary {
+    position: initial;
+    top: 0;
+    padding: 20px 15px 20px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-promo {
+    width: 80%;
+    margin: auto;
+  }
+
+  .cart-list {
+    display: none;
+  }
+
+  .cart-product {
+    display: none;
+  }
+
+  .cart-product-responsive {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px 5px 10px;
+    background-color: #fbfbfb;
+    border: 1px solid #dfe6e8;
+    box-shadow: 0px 0px 8px 0.5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
+  .cart-product-responsive img {
+    width: 100px;
+  }
+
+  .r-product {
+    text-align: justify;
+  }
+
+  .r-product,
+  .r-price,
+  .r-quantity,
+  .r-subtotal {
+    width: 100%;
+    align-self: flex-start;
+    padding: 15px;
+    border-top: 1px solid #dfe6e8;
+    font-size: 14px;
+  }
+
+  .r-price,
+  .r-quantity,
+  .r-subtotal {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .r-quantity input {
+    width: 40px;
+  }
+
+  .r-remove {
+    position: absolute;
+    right: 20px;
+  }
+
+  .cart-summary-title {
+    font-size: 16px;
+  }
+
+  .cart-summary-product,
+  .cart-summary-delivery {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 500px) {
+  .cart-promo {
+    width: 100%;
+  }
 }

@@ -2,6 +2,7 @@ import "../../styles/OrderConfirmation.css";
 import { useEffect, useState } from "react";
 import forgelogo from "../../assets/images/forge-logo.png";
 import smartphone1 from "../../assets/images/tecnologia/smartphone1.png";
+import laptop1 from "../../assets/images/tecnologia/laptop1.png";
 import { PiSealCheckFill } from "react-icons/pi";
 import { IoCard } from "react-icons/io5";
 import Loader from "../Helpers/Loader";
@@ -59,7 +60,27 @@ function OrderConfirmation() {
                     <img src={smartphone1} alt="product" />
                   </div>
                   <div className="oc-product-name">
-                    <span>Smartphone</span>
+                    <span>
+                      Teléfono celular de 128gb desbloqueado de fábrica con
+                      tecnología 5G, cámara profesional con zoom espacial de
+                      30X, modo nocturno, color gris espacial
+                    </span>
+                    <span>Cantidad: 8</span>
+                  </div>
+                  <div className="oc-product-price">
+                    <span>$999.999</span>
+                  </div>
+                </div>
+                <div className="oc-product">
+                  <div className="oc-product-img">
+                    <img src={laptop1} alt="product" />
+                  </div>
+                  <div className="oc-product-name">
+                    <span>
+                      Laptop FHD de 14 pulgadas (400 nits) con procesador Intel
+                      Core i7-10510U de 10ª generación de hasta 4.90 GHz, SSD
+                      PCIe de 1 TB, 16 GB de RAM y Windows 11 Pro
+                    </span>
                     <span>Cantidad: 8</span>
                   </div>
                   <div className="oc-product-price">
@@ -71,7 +92,11 @@ function OrderConfirmation() {
                     <img src={smartphone1} alt="product" />
                   </div>
                   <div className="oc-product-name">
-                    <span>Smartphone</span>
+                    <span>
+                      Teléfono celular de 128gb desbloqueado de fábrica con
+                      tecnología 5G, cámara profesional con zoom espacial de
+                      30X, modo nocturno, color gris espacial
+                    </span>
                     <span>Cantidad: 8</span>
                   </div>
                   <div className="oc-product-price">
@@ -80,22 +105,14 @@ function OrderConfirmation() {
                 </div>
                 <div className="oc-product">
                   <div className="oc-product-img">
-                    <img src={smartphone1} alt="product" />
+                    <img src={laptop1} alt="product" />
                   </div>
                   <div className="oc-product-name">
-                    <span>Smartphone</span>
-                    <span>Cantidad: 8</span>
-                  </div>
-                  <div className="oc-product-price">
-                    <span>$999.999</span>
-                  </div>
-                </div>
-                <div className="oc-product">
-                  <div className="oc-product-img">
-                    <img src={smartphone1} alt="product" />
-                  </div>
-                  <div className="oc-product-name">
-                    <span>Smartphone</span>
+                    <span>
+                      Laptop FHD de 14 pulgadas (400 nits) con procesador Intel
+                      Core i7-10510U de 10ª generación de hasta 4.90 GHz, SSD
+                      PCIe de 1 TB, 16 GB de RAM y Windows 11 Pro
+                    </span>
                     <span>Cantidad: 8</span>
                   </div>
                   <div className="oc-product-price">

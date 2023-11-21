@@ -100,7 +100,8 @@ function Header() {
             {user ? (
               <>
                 <li className="user-in-responsive">
-                  <FaUserTie size={35} color="black" /> Hola, <strong>{user.email}</strong>
+                  <FaUserTie size={35} color="black" /> Hola,
+                  <strong>{user.email}</strong>
                 </li>
               </>
             ) : (
@@ -122,9 +123,11 @@ function Header() {
             <li>Electrodomesticos</li>
             <li>Nuevos ingresos</li>
             <li>OFERTAS!</li>
-            <li onClick={handleLogout}>
-              <strong>CERRAR SESION</strong>
-            </li>
+            {user && (
+              <li onClick={handleLogout}>
+                <strong>CERRAR SESION</strong>
+              </li>
+            )}
           </ul>
         </div>
       )}

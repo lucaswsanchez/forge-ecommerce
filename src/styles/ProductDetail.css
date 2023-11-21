@@ -1,5 +1,6 @@
 .pd-container {
   width: 85%;
+  max-width: 1400px;
   height: 100%;
   margin: auto;
   padding: 50px 0 50px 0;
@@ -12,7 +13,7 @@
 }
 
 .slider-container img {
-    width: 100%
+  width: 100%;
 }
 
 .pd-text {
@@ -26,6 +27,7 @@
 .pd-text p {
   font-size: 24px;
   font-weight: bold;
+  text-align: justify;
 }
 
 .pd-text span:first-of-type {
@@ -78,4 +80,62 @@
   color: #48515b;
   border-top: 1px solid #aaa;
   padding-top: 10px;
+}
+
+@media (max-width: 1070px) {
+  .pd-text {
+    padding-top: 0;
+  }
+
+  .pd-quantity-btn {
+    width: 80%;
+  }
+}
+
+@media (max-width: 980px) {
+  .pd-container {
+    width: 100%;
+    padding: 50px 20px 50px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pd-container {
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+  }
+
+  .pd-img {
+    width: 100%;
+  }
+
+  .pd-text {
+    width: 100%;
+  }
+
+  .pd-quantity-btn {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .pd-quantity-btn input {
+    width: 100%;
+  }
+
+  .pd-category {
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .pd-text p {
+    font-size: 20px;
+  }
+
+  .pd-text span:first-of-type {
+    font-size: 22px;
+    font-weight: 600;
+    color: #48515b;
+  }
 }

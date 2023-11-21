@@ -1,8 +1,14 @@
 import "../../styles/ShoppingCart.css";
-import smartphone1 from "../../assets/images/tecnologia/smartphone1.png";
 import { Link } from "react-router-dom";
+import smartphone1 from "../../assets/images/tecnologia/smartphone1.png";
+import laptop1 from "../../assets/images/tecnologia/laptop1.png";
+import { IoIosClose } from "react-icons/io";
 
 function ShoppingCart() {
+  const handleScroll = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="cart-container">
       <div className="cart">
@@ -110,6 +116,136 @@ function ShoppingCart() {
             <button>Eliminar</button>
           </div>
         </div>
+        <div className="cart-product-responsive">
+          <div className="r-image">
+            <img src={laptop1} alt="product" />
+          </div>
+          <div className="r-product">
+            <strong>Producto: </strong>
+            <span>
+              Laptop FHD de 14 pulgadas (400 nits) con procesador Intel Core
+              i7-10510U de 10ª generación de hasta 4.90 GHz, SSD PCIe de 1 TB,
+              16 GB de RAM y Windows 11 Pro
+            </span>
+          </div>
+          <div className="r-price">
+            <strong>Precio: </strong>$999.999
+          </div>
+          <div className="r-quantity">
+            <strong>Cantidad: </strong>
+            <input type="number" min="1" />
+          </div>
+          <div className="r-subtotal">
+            <strong>Subtotal: </strong>$999.999
+          </div>
+          <div className="r-remove">
+            <IoIosClose size={30} />
+          </div>
+        </div>
+        <div className="cart-product-responsive">
+          <div className="r-image">
+            <img src={laptop1} alt="product" />
+          </div>
+          <div className="r-product">
+            <strong>Producto: </strong>
+            <span>
+              Laptop FHD de 14 pulgadas (400 nits) con procesador Intel Core
+              i7-10510U de 10ª generación de hasta 4.90 GHz, SSD PCIe de 1 TB,
+              16 GB de RAM y Windows 11 Pro
+            </span>
+          </div>
+          <div className="r-price">
+            <strong>Precio: </strong>$999.999
+          </div>
+          <div className="r-quantity">
+            <strong>Cantidad: </strong>
+            <input type="number" min="1" />
+          </div>
+          <div className="r-subtotal">
+            <strong>Subtotal: </strong>$999.999
+          </div>
+          <div className="r-remove">
+            <IoIosClose size={30} />
+          </div>
+        </div>
+        <div className="cart-product-responsive">
+          <div className="r-image">
+            <img src={laptop1} alt="product" />
+          </div>
+          <div className="r-product">
+            <strong>Producto: </strong>
+            <span>
+              Laptop FHD de 14 pulgadas (400 nits) con procesador Intel Core
+              i7-10510U de 10ª generación de hasta 4.90 GHz, SSD PCIe de 1 TB,
+              16 GB de RAM y Windows 11 Pro
+            </span>
+          </div>
+          <div className="r-price">
+            <strong>Precio: </strong>$999.999
+          </div>
+          <div className="r-quantity">
+            <strong>Cantidad: </strong>
+            <input type="number" min="1" />
+          </div>
+          <div className="r-subtotal">
+            <strong>Subtotal: </strong>$999.999
+          </div>
+          <div className="r-remove">
+            <IoIosClose size={30} />
+          </div>
+        </div>
+        <div className="cart-product-responsive">
+          <div className="r-image">
+            <img src={laptop1} alt="product" />
+          </div>
+          <div className="r-product">
+            <strong>Producto: </strong>
+            <span>
+              Laptop FHD de 14 pulgadas (400 nits) con procesador Intel Core
+              i7-10510U de 10ª generación de hasta 4.90 GHz, SSD PCIe de 1 TB,
+              16 GB de RAM y Windows 11 Pro
+            </span>
+          </div>
+          <div className="r-price">
+            <strong>Precio: </strong>$999.999
+          </div>
+          <div className="r-quantity">
+            <strong>Cantidad: </strong>
+            <input type="number" min="1" />
+          </div>
+          <div className="r-subtotal">
+            <strong>Subtotal: </strong>$999.999
+          </div>
+          <div className="r-remove">
+            <IoIosClose size={30} />
+          </div>
+        </div>
+        <div className="cart-product-responsive">
+          <div className="r-image">
+            <img src={laptop1} alt="product" />
+          </div>
+          <div className="r-product">
+            <strong>Producto: </strong>
+            <span>
+              Laptop FHD de 14 pulgadas (400 nits) con procesador Intel Core
+              i7-10510U de 10ª generación de hasta 4.90 GHz, SSD PCIe de 1 TB,
+              16 GB de RAM y Windows 11 Pro
+            </span>
+          </div>
+          <div className="r-price">
+            <strong>Precio: </strong>$999.999
+          </div>
+          <div className="r-quantity">
+            <strong>Cantidad: </strong>
+            <input type="number" min="1" />
+          </div>
+          <div className="r-subtotal">
+            <strong>Subtotal: </strong>$999.999
+          </div>
+          <div className="r-remove">
+            <IoIosClose size={30} />
+          </div>
+        </div>
       </div>
       <div className="cart-summary-container">
         <div className="cart-summary">
@@ -129,7 +265,7 @@ function ShoppingCart() {
             <div className="total-value">$4.004.496</div>
           </div>
           <div className="cart-summary-checkout">
-            <Link to="/checkout">
+            <Link to="/checkout" onClick={handleScroll}>
               <button>Finalizar compra</button>
             </Link>
           </div>
