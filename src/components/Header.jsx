@@ -1,4 +1,5 @@
 import "../styles/Header.css";
+import "../styles/Animations.css";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../firebase.js";
@@ -9,6 +10,7 @@ import { GiShoppingCart } from "react-icons/gi";
 import { IoMenu } from "react-icons/io5";
 
 function Header() {
+  const [showResponsiveDropdown, setResponsiveDropdown] = useState(false);
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
@@ -29,11 +31,15 @@ function Header() {
     }
   };
 
+  const handleDropdown = () => {
+    setResponsiveDropdown(!showResponsiveDropdown);
+  };
+
   return (
     <div className="header-container ">
       <div className="header-main">
         <div className="header-logo">
-          <IoMenu className="header-menu" />
+          <IoMenu className="header-menu" onClick={handleDropdown} />
           <Link to="/" className="link">
             <img src={forgelogo} alt="logo" />
           </Link>
@@ -88,6 +94,40 @@ function Header() {
           </ul>
         </div>
       </div>
+      {showResponsiveDropdown && (
+        <div className="responsive-dropdown slide-in-left">
+          <ul>
+            {user ? (
+              <>
+                <li className="user-in-responsive">
+                  <FaUserTie size={35} /> Hola, <strong>{user.email}</strong>
+                </li>
+              </>
+            ) : (
+              <>
+                <Link to="/login">
+                  <li>
+                    <strong>INICIAR SESION</strong>
+                  </li>
+                </Link>
+                <Link to="/signup">
+                  <li>
+                    <strong>REGISTRARSE</strong>
+                  </li>
+                </Link>
+              </>
+            )}
+            <li>Tecnologia</li>
+            <li>Cocina</li>
+            <li>Electrodomesticos</li>
+            <li>Nuevos ingresos</li>
+            <li>OFERTAS!</li>
+            <li onClick={handleLogout}>
+              <strong>CERRAR SESION</strong>
+            </li>
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
