@@ -3,8 +3,15 @@ import { Link } from "react-router-dom";
 import smartphone1 from "../../assets/images/tecnologia/smartphone1.png";
 import laptop1 from "../../assets/images/tecnologia/laptop1.png";
 import { IoIosClose } from "react-icons/io";
+import { useCart } from "../Context/CartContext";
 
 function ShoppingCart() {
+  const { state, dispatch } = useCart();
+
+  const handleRemoveItem = (productId) => {
+    dispatch({ type: "REMOVE_ITEM", payload: { id: productId } });
+  };
+
   const handleScroll = () => {
     window.scrollTo(0, 0);
   };
@@ -32,220 +39,51 @@ function ShoppingCart() {
             <li>Subtotal</li>
           </ul>
         </div>
-        <div className="cart-product">
-          <div className="item">
-            <div className="product-image">
-              <img src={smartphone1} alt="product" />
+        {state.cart.map((item) => (
+          <div key={item.id} className="cart-product">
+            <div className="item">
+              <div className="product-image">
+                <img src={item.image} alt="product" />
+              </div>
+              <div className="product-details">
+                <span>{item.name}</span>
+                <span>Codigo del producto - {item.code}</span>
+              </div>
             </div>
-            <div className="product-details">
-              <span>
-                <strong>Smartphone</strong> 64gb 8gb ram DUAL SIM Verde Vidrio
-              </span>
-              <span>Codigo del producto - 232321939</span>
-            </div>
-          </div>
-          <div className="price">$999.999</div>
-          <div className="quantity">
-            <input type="number" min="1" />
-          </div>
-          <div className="subtotal">$999.999</div>
-          <div className="remove">
-            <button>Eliminar</button>
-          </div>
-        </div>
-        <div className="cart-product">
-          <div className="item">
-            <div className="product-image">
-              <img src={smartphone1} alt="product" />
-            </div>
-            <div className="product-details">
-              <span>
-                <strong>Smartphone</strong> 64gb 8gb ram DUAL SIM Verde Vidrio
-              </span>
-              <span>Codigo del producto - 232321939</span>
+            <div className="price">${item.price}</div>
+            <div className="quantity">{item.quantity}</div>
+            <div className="subtotal">${item.price * item.quantity}</div>
+            <div className="remove">
+              <button onClick={() => handleRemoveItem(item.id)}>
+                Eliminar
+              </button>
             </div>
           </div>
-          <div className="price">$999.999</div>
-          <div className="quantity">
-            <input type="number" min="1" />
-          </div>
-          <div className="subtotal">$999.999</div>
-          <div className="remove">
-            <button>Eliminar</button>
-          </div>
-        </div>
-        <div className="cart-product">
-          <div className="item">
-            <div className="product-image">
-              <img src={smartphone1} alt="product" />
+        ))}
+        {state.cart.map((item) => (
+          <div key={item.id} className="cart-product-responsive">
+            <div className="r-image">
+              <img src={item.image} alt="product" />
             </div>
-            <div className="product-details">
-              <span>
-                <strong>Smartphone</strong> 64gb 8gb ram DUAL SIM Verde Vidrio
-              </span>
-              <span>Codigo del producto - 232321939</span>
+            <div className="r-product">
+              <strong>Producto: </strong>
+              <span>{item.name}</span>
             </div>
-          </div>
-          <div className="price">$999.999</div>
-          <div className="quantity">
-            <input type="number" min="1" />
-          </div>
-          <div className="subtotal">$999.999</div>
-          <div className="remove">
-            <button>Eliminar</button>
-          </div>
-        </div>
-        <div className="cart-product">
-          <div className="item">
-            <div className="product-image">
-              <img src={smartphone1} alt="product" />
+            <div className="r-price">
+              <strong>Precio: </strong>${item.price}
             </div>
-            <div className="product-details">
-              <span>
-                <strong>Smartphone</strong> 64gb 8gb ram DUAL SIM Verde Vidrio
-              </span>
-              <span>Codigo del producto - 232321939</span>
+            <div className="r-quantity">
+              <strong>Cantidad: </strong>
+              {item.quantity}
+            </div>
+            <div className="r-subtotal">
+              <strong>Subtotal: </strong>${item.price * item.quantity}
+            </div>
+            <div className="r-remove">
+              <IoIosClose size={30} onClick={() => handleRemoveItem(item.id)} />
             </div>
           </div>
-          <div className="price">$999.999</div>
-          <div className="quantity">
-            <input type="number" min="1" />
-          </div>
-          <div className="subtotal">$999.999</div>
-          <div className="remove">
-            <button>Eliminar</button>
-          </div>
-        </div>
-        <div className="cart-product-responsive">
-          <div className="r-image">
-            <img src={laptop1} alt="product" />
-          </div>
-          <div className="r-product">
-            <strong>Producto: </strong>
-            <span>
-              Laptop FHD de 14 pulgadas (400 nits) con procesador Intel Core
-              i7-10510U de 10ª generación de hasta 4.90 GHz, SSD PCIe de 1 TB,
-              16 GB de RAM y Windows 11 Pro
-            </span>
-          </div>
-          <div className="r-price">
-            <strong>Precio: </strong>$999.999
-          </div>
-          <div className="r-quantity">
-            <strong>Cantidad: </strong>
-            <input type="number" min="1" />
-          </div>
-          <div className="r-subtotal">
-            <strong>Subtotal: </strong>$999.999
-          </div>
-          <div className="r-remove">
-            <IoIosClose size={30} />
-          </div>
-        </div>
-        <div className="cart-product-responsive">
-          <div className="r-image">
-            <img src={laptop1} alt="product" />
-          </div>
-          <div className="r-product">
-            <strong>Producto: </strong>
-            <span>
-              Laptop FHD de 14 pulgadas (400 nits) con procesador Intel Core
-              i7-10510U de 10ª generación de hasta 4.90 GHz, SSD PCIe de 1 TB,
-              16 GB de RAM y Windows 11 Pro
-            </span>
-          </div>
-          <div className="r-price">
-            <strong>Precio: </strong>$999.999
-          </div>
-          <div className="r-quantity">
-            <strong>Cantidad: </strong>
-            <input type="number" min="1" />
-          </div>
-          <div className="r-subtotal">
-            <strong>Subtotal: </strong>$999.999
-          </div>
-          <div className="r-remove">
-            <IoIosClose size={30} />
-          </div>
-        </div>
-        <div className="cart-product-responsive">
-          <div className="r-image">
-            <img src={laptop1} alt="product" />
-          </div>
-          <div className="r-product">
-            <strong>Producto: </strong>
-            <span>
-              Laptop FHD de 14 pulgadas (400 nits) con procesador Intel Core
-              i7-10510U de 10ª generación de hasta 4.90 GHz, SSD PCIe de 1 TB,
-              16 GB de RAM y Windows 11 Pro
-            </span>
-          </div>
-          <div className="r-price">
-            <strong>Precio: </strong>$999.999
-          </div>
-          <div className="r-quantity">
-            <strong>Cantidad: </strong>
-            <input type="number" min="1" />
-          </div>
-          <div className="r-subtotal">
-            <strong>Subtotal: </strong>$999.999
-          </div>
-          <div className="r-remove">
-            <IoIosClose size={30} />
-          </div>
-        </div>
-        <div className="cart-product-responsive">
-          <div className="r-image">
-            <img src={laptop1} alt="product" />
-          </div>
-          <div className="r-product">
-            <strong>Producto: </strong>
-            <span>
-              Laptop FHD de 14 pulgadas (400 nits) con procesador Intel Core
-              i7-10510U de 10ª generación de hasta 4.90 GHz, SSD PCIe de 1 TB,
-              16 GB de RAM y Windows 11 Pro
-            </span>
-          </div>
-          <div className="r-price">
-            <strong>Precio: </strong>$999.999
-          </div>
-          <div className="r-quantity">
-            <strong>Cantidad: </strong>
-            <input type="number" min="1" />
-          </div>
-          <div className="r-subtotal">
-            <strong>Subtotal: </strong>$999.999
-          </div>
-          <div className="r-remove">
-            <IoIosClose size={30} />
-          </div>
-        </div>
-        <div className="cart-product-responsive">
-          <div className="r-image">
-            <img src={laptop1} alt="product" />
-          </div>
-          <div className="r-product">
-            <strong>Producto: </strong>
-            <span>
-              Laptop FHD de 14 pulgadas (400 nits) con procesador Intel Core
-              i7-10510U de 10ª generación de hasta 4.90 GHz, SSD PCIe de 1 TB,
-              16 GB de RAM y Windows 11 Pro
-            </span>
-          </div>
-          <div className="r-price">
-            <strong>Precio: </strong>$999.999
-          </div>
-          <div className="r-quantity">
-            <strong>Cantidad: </strong>
-            <input type="number" min="1" />
-          </div>
-          <div className="r-subtotal">
-            <strong>Subtotal: </strong>$999.999
-          </div>
-          <div className="r-remove">
-            <IoIosClose size={30} />
-          </div>
-        </div>
+        ))}
       </div>
       <div className="cart-summary-container">
         <div className="cart-summary">
@@ -253,8 +91,13 @@ function ShoppingCart() {
             <span>Resumen de compra</span>
           </div>
           <div className="cart-summary-product">
-            <div className="subtotal-title">Producto (4)</div>
-            <div className="subtotal-value">$999.999</div>
+            <div className="subtotal-title">Producto ({state.cart.length})</div>
+            <div className="subtotal-value">
+              $
+              {state.cart.reduce((accumulatedPrice, subtotal) => {
+                return accumulatedPrice + subtotal.price * subtotal.quantity;
+              }, 0)}
+            </div>
           </div>
           <div className="cart-summary-delivery">
             <div className="subtotal-title">Envio</div>
@@ -262,7 +105,12 @@ function ShoppingCart() {
           </div>
           <div className="cart-summary-total">
             <div className="total-title">TOTAL</div>
-            <div className="total-value">$4.004.496</div>
+            <div className="total-value">
+              $
+              {state.cart.reduce((accumulatedPrice, subtotal) => {
+                return accumulatedPrice + subtotal.price * subtotal.quantity;
+              }, 0) + 4500}
+            </div>
           </div>
           <div className="cart-summary-checkout">
             <Link to="/checkout" onClick={handleScroll}>

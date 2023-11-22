@@ -13,7 +13,7 @@ function Header() {
   const [showResponsiveDropdown, setResponsiveDropdown] = useState(false);
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
-
+  
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setUser(user);

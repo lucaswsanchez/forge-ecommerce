@@ -1,12 +1,14 @@
 import "../../styles/Checkout.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "../Context/CartContext";
 import Loader from "../Helpers/Loader";
 import frontcard from "../../assets/images/front-card.png";
 import backcard from "../../assets/images/back-card.png";
 
 function Checkout() {
   const [order, setOrder] = useState(false);
+  const { state } = useCart();
 
   useEffect(() => {
     const timeOut = setTimeout(() => {
@@ -78,8 +80,17 @@ function Checkout() {
                 <span>Resumen de compra</span>
               </div>
               <div className="cart-summary-product">
-                <div className="subtotal-title">Producto (4)</div>
-                <div className="subtotal-value">$999.999</div>
+                <div className="subtotal-title">
+                  Producto ({state.cart.length})
+                </div>
+                <div className="subtotal-value">
+                  $
+                  {state.cart.reduce((accumulatedPrice, subtotal) => {
+                    return (
+                      accumulatedPrice + subtotal.price * subtotal.quantity
+                    );
+                  }, 0)}
+                </div>
               </div>
               <div className="cart-summary-delivery">
                 <div className="subtotal-title">Envio</div>
@@ -87,7 +98,14 @@ function Checkout() {
               </div>
               <div className="cart-summary-total">
                 <div className="total-title">TOTAL</div>
-                <div className="total-value">$4.004.496</div>
+                <div className="total-value">
+                  $
+                  {state.cart.reduce((accumulatedPrice, subtotal) => {
+                    return (
+                      accumulatedPrice + subtotal.price * subtotal.quantity
+                    );
+                  }, 0) + 4500}
+                </div>
               </div>
             </div>
           </div>

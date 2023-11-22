@@ -1,18 +1,59 @@
 import "../../styles/Products.css";
-import { Link } from "react-router-dom";
-import smartphone1 from "../../assets/images/tecnologia/smartphone1.png";
-import heladera1 from "../../assets/images/cocina/heladera1.png";
-import lavarropas1 from "../../assets/images/electrodomesticos/lavarropas1.png";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebase";
+import { useProductContext } from "../Context/ProductContext";
+
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import { FaRegStar } from "react-icons/fa";
 
 function Products() {
+  const { products } = useProductContext();
+  const [user, setUser] = useState(null);
+  const [showSeeMore, setShowSeeMore] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setUser(user);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  const handleHoverEnter = (productId) => {
+    if (user) {
+      setShowSeeMore(productId);
+    }
+  };
+
+  const handleHoverLeave = () => {
+    setShowSeeMore(null);
+  };
+
+  const handleClick = (productId) => {
+    if (user) {
+      navigate(`/product-detail/${productId}`);
+      window.scrollTo(0, 0);
+    } else {
+      toast.error("Debes iniciar sesion para ver mas.", {
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+      });
+    }
+  };
+
   const stars = Array.from({ length: 5 }, (_, index) => (
     <FaRegStar key={index} />
   ));
-
-  const handleScroll = () => {
-    window.scrollTo(0, 0);
-  };
 
   return (
     <div className="products-container">
@@ -20,68 +61,26 @@ function Products() {
         <h2>Nuestros productos destacados</h2>
       </div>
       <div className="products">
-        <Link to="/product-detail" onClick={handleScroll}>
-          <div className="product">
-            <div className="product-img">
-              <img src={smartphone1} alt="smartphone" />
+        {products.map((product) => (
+          <div className="product" key={product.id}>
+            <div
+              className="product-img"
+              onMouseEnter={() => handleHoverEnter(product.id)}
+              onMouseLeave={handleHoverLeave}
+              onClick={() => handleClick(product.id)}
+            >
+              <img src={product.image} alt={product.name} />
+              {showSeeMore === product.id && (
+                <button className="see-more-btn">Ver más</button>
+              )}
             </div>
             <div className="product-text">
-              <div className="product-name">Smartphone 64gb 8gb ram</div>
-              <div className="product-price">$999.999</div>
               <div className="product-rating">{stars}</div>
+              <div className="product-name">{product.name}</div>
+              <div className="product-price">${product.price}</div>
             </div>
           </div>
-        </Link>
-        <div className="product">
-          <div className="product-img">
-            <img src={heladera1} alt="heladera" />
-          </div>
-          <div className="product-text">
-            <div className="product-name">Heladera Doble Puerta Inox</div>
-            <div className="product-price">$679.999</div>
-            <div className="product-rating">{stars}</div>
-          </div>
-        </div>
-        <div className="product">
-          <div className="product-img">
-            <img src={lavarropas1} alt="lavarropa" />
-          </div>
-          <div className="product-text">
-            <div className="product-name">Lavarropa Automatico 12.000rpm</div>
-            <div className="product-price">$350.000</div>
-            <div className="product-rating">{stars}</div>
-          </div>
-        </div>
-        <div className="product">
-          <div className="product-img">
-            <img src={smartphone1} alt="smartphone" />
-          </div>
-          <div className="product-text">
-            <div className="product-name">Smartphone 64gb 8gb ram</div>
-            <div className="product-price">$999.999</div>
-            <div className="product-rating">{stars}</div>
-          </div>
-        </div>
-        <div className="product">
-          <div className="product-img">
-            <img src={smartphone1} alt="smartphone" />
-          </div>
-          <div className="product-text">
-            <div className="product-name">Smartphone 64gb 8gb ram</div>
-            <div className="product-price">$999.999</div>
-            <div className="product-rating">{stars}</div>
-          </div>
-        </div>
-        <div className="product">
-          <div className="product-img">
-            <img src={smartphone1} alt="smartphone" />
-          </div>
-          <div className="product-text">
-            <div className="product-name">Smartphone 64gb 8gb ram</div>
-            <div className="product-price">$999.999</div>
-            <div className="product-rating">{stars}</div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

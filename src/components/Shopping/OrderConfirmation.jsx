@@ -1,5 +1,7 @@
 import "../../styles/OrderConfirmation.css";
 import { useEffect, useState } from "react";
+import { auth } from "../../firebase";
+import { useCart } from "../Context/CartContext";
 import forgelogo from "../../assets/images/forge-logo.png";
 import smartphone1 from "../../assets/images/tecnologia/smartphone1.png";
 import laptop1 from "../../assets/images/tecnologia/laptop1.png";
@@ -8,7 +10,17 @@ import { IoCard } from "react-icons/io5";
 import Loader from "../Helpers/Loader";
 
 function OrderConfirmation() {
+  const [user, setUser] = useState(null);
   const [payment, setPayment] = useState(false);
+  const { state } = useCart();
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setUser(user);
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   useEffect(() => {
     const timeOut = setTimeout(() => {
@@ -29,7 +41,7 @@ function OrderConfirmation() {
             <div className="oc-card-details">
               <p>Tu compra fue confirmada!</p>
               <p>
-                Hola, <strong>42994495lucas@gmail.com</strong>
+                Hola, <strong>{user.email}</strong>
               </p>
               <p>
                 Has finalizado tu compra, haremos el envio del paquete dentro de
@@ -55,76 +67,33 @@ function OrderConfirmation() {
                 </div>
               </div>
               <div className="oc-card-products">
-                <div className="oc-product">
-                  <div className="oc-product-img">
-                    <img src={smartphone1} alt="product" />
+                {state.cart.map((item) => (
+                  <div key={item.id} className="oc-product">
+                    <div className="oc-product-img">
+                      <img src={item.image} alt="product" />
+                    </div>
+                    <div className="oc-product-name">
+                      <span>{item.name}</span>
+                      <span>Cantidad: {item.quantity}</span>
+                    </div>
+                    <div className="oc-product-price">
+                      <span>${item.price * item.quantity}</span>
+                    </div>
                   </div>
-                  <div className="oc-product-name">
-                    <span>
-                      Teléfono celular de 128gb desbloqueado de fábrica con
-                      tecnología 5G, cámara profesional con zoom espacial de
-                      30X, modo nocturno, color gris espacial
-                    </span>
-                    <span>Cantidad: 8</span>
-                  </div>
-                  <div className="oc-product-price">
-                    <span>$999.999</span>
-                  </div>
-                </div>
-                <div className="oc-product">
-                  <div className="oc-product-img">
-                    <img src={laptop1} alt="product" />
-                  </div>
-                  <div className="oc-product-name">
-                    <span>
-                      Laptop FHD de 14 pulgadas (400 nits) con procesador Intel
-                      Core i7-10510U de 10ª generación de hasta 4.90 GHz, SSD
-                      PCIe de 1 TB, 16 GB de RAM y Windows 11 Pro
-                    </span>
-                    <span>Cantidad: 8</span>
-                  </div>
-                  <div className="oc-product-price">
-                    <span>$999.999</span>
-                  </div>
-                </div>
-                <div className="oc-product">
-                  <div className="oc-product-img">
-                    <img src={smartphone1} alt="product" />
-                  </div>
-                  <div className="oc-product-name">
-                    <span>
-                      Teléfono celular de 128gb desbloqueado de fábrica con
-                      tecnología 5G, cámara profesional con zoom espacial de
-                      30X, modo nocturno, color gris espacial
-                    </span>
-                    <span>Cantidad: 8</span>
-                  </div>
-                  <div className="oc-product-price">
-                    <span>$999.999</span>
-                  </div>
-                </div>
-                <div className="oc-product">
-                  <div className="oc-product-img">
-                    <img src={laptop1} alt="product" />
-                  </div>
-                  <div className="oc-product-name">
-                    <span>
-                      Laptop FHD de 14 pulgadas (400 nits) con procesador Intel
-                      Core i7-10510U de 10ª generación de hasta 4.90 GHz, SSD
-                      PCIe de 1 TB, 16 GB de RAM y Windows 11 Pro
-                    </span>
-                    <span>Cantidad: 8</span>
-                  </div>
-                  <div className="oc-product-price">
-                    <span>$999.999</span>
-                  </div>
-                </div>
+                ))}
               </div>
               <div className="oc-card-total-container">
                 <div className="oc-card-total">
                   <div className="oc-total">
                     <span>Subtotal</span>
-                    <span>$999.999</span>
+                    <span>
+                      $
+                      {state.cart.reduce((accumulatedPrice, subtotal) => {
+                        return (
+                          accumulatedPrice + subtotal.price * subtotal.quantity
+                        );
+                      }, 0)}
+                    </span>
                   </div>
                   <div className="oc-total">
                     <span>Envio</span>
@@ -136,7 +105,16 @@ function OrderConfirmation() {
                   </div>
                   <div className="oc-total">
                     <span>TOTAL</span>
-                    <span>$1.500.000</span>
+                    <span>
+                      $
+                      {state.cart.reduce((accumulatedPrice, subtotal) => {
+                        return (
+                          accumulatedPrice + subtotal.price * subtotal.quantity
+                        );
+                      }, 0) +
+                        4500 +
+                        50000}
+                    </span>
                   </div>
                 </div>
               </div>

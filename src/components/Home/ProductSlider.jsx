@@ -5,7 +5,7 @@ import smartphone1 from "../../assets/images/tecnologia/smartphone1.png";
 import smartphone2 from "../../assets/images/tecnologia/smartphone2.jpg";
 import smartphone3 from "../../assets/images/tecnologia/smartphone3.jpg";
 
-function ProductSlider() {
+function ProductSlider({ image1, image2, image3 }) {
   const settings = {
     dots: true,
     arrows: false,
@@ -20,13 +20,13 @@ function ProductSlider() {
     <div className="slider-container">
       <Slider {...settings}>
         <div>
-          <img src={smartphone1} />
+          <img src={image1} />
         </div>
         <div>
-          <img src={smartphone2} />
+          <img src={image2} />
         </div>
         <div>
-          <img src={smartphone3} />
+          <img src={image3} />
         </div>
       </Slider>
     </div>

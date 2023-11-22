@@ -1,19 +1,63 @@
 import "../../styles/ProductDetail.css";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useProductContext } from "../Context/ProductContext";
+import { useCart } from "../Context/CartContext";
 import ProductSlider from "./ProductSlider";
+import { useParams } from "react-router-dom";
+import { useState } from "react";
 
 function ProductDetail() {
+  const { productId } = useParams();
+  const { products } = useProductContext();
+  const { dispatch } = useCart();
+  const [quantity, setQuantity] = useState(1);
+
+  if (products.Length === 0) return <div>Loading...</div>;
+
+  const productDetails = products.find(
+    (product) => product.id === parseInt(productId)
+  );
+
+  if (!productDetails) return <div>Loading...</div>;
+
+  const handleAddToCart = () => {
+    toast.success("El producto fue agregado al carrito!", {
+      position: "bottom-right",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: false,
+      progress: undefined,
+      theme: "light",
+    });
+
+    dispatch({
+      type: "ADD_ITEM",
+      payload: {
+        id: productDetails.id,
+        image: productDetails.image,
+        name: productDetails.name,
+        price: productDetails.price,
+        code: productDetails.code,
+        quantity,
+      },
+    });
+  };
+
   return (
     <div className="pd-container">
       <div className="pd-img">
-        <ProductSlider />
+        <ProductSlider
+          image1={productDetails.image}
+          image2={productDetails.image2}
+          image3={productDetails.image3}
+        />
       </div>
       <div className="pd-text">
-        <p>
-          Laptop FHD de 14 pulgadas (400 nits) con procesador Intel Core
-          i7-10510U de 10ª generación de hasta 4.90 GHz, SSD PCIe de 1 TB, 16 GB
-          de RAM y Windows 11 Pro
-        </p>
-        <span>$999.000</span>
+        <p>{productDetails.name}</p>
+        <span>${productDetails.price}</span>
         <div className="pd-features">
           <span>Caracteristicas clave</span>
           <ul>
@@ -25,11 +69,19 @@ function ProductDetail() {
           </ul>
         </div>
         <div className="pd-quantity-btn">
-          <input type="number" id="quantity" name="quantity" min="1" max="99" />
-          <button>Agregar al carrito</button>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            min="1"
+            max="99"
+            value={quantity}
+            onChange={(e) => setQuantity(e.target.value)}
+          />
+          <button onClick={handleAddToCart}>Agregar al carrito</button>
         </div>
         <span className="pd-category">
-          Categoria: <strong>Tecnologia</strong>
+          Categoria: <strong>{productDetails.category}</strong>
         </span>
       </div>
     </div>
