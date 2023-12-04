@@ -74,7 +74,8 @@
   height: 220px;
   object-fit: contain;
   align-self: flex-start;
-  background-color: #f2efef;
+  background-color: #f1f1f1;
+  border-radius: 5px;
 }
 
 .product-text {
@@ -84,12 +85,11 @@
 
 .product-name {
   font-size: 13px;
-  text-align: justify;
-  font-weight: 600;
 }
 
 .product-price {
-  font-size: 14px;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .product-rating svg {

@@ -51,6 +51,16 @@ function Products() {
     }
   };
 
+  const truncateWords = (text, numWords) => {
+    const words = text.split(" ");
+
+    if (words.length > numWords) {
+      return words.slice(0, numWords).join(" ") + "...";
+    }
+
+    return text;
+  };
+
   const stars = Array.from({ length: 5 }, (_, index) => (
     <FaRegStar key={index} />
   ));
@@ -76,7 +86,9 @@ function Products() {
             </div>
             <div className="product-text">
               <div className="product-rating">{stars}</div>
-              <div className="product-name">{product.name}</div>
+              <div className="product-name">
+                {truncateWords(product.name, 6)}
+              </div>
               <div className="product-price">${product.price}</div>
             </div>
           </div>
